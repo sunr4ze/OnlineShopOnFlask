@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: #87CEFA;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    background-color: black;
+    height: 90px;
+}
+
+.logo{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin-right: 360px;
+}
+
+.logo-text{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header-elems{
+    display: flex;
+    width: 90%;
+    margin: auto auto auto auto;
+}
+
+.header-elem{
+    margin-left: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.plogo-text{
+    color: white;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 30px;
+}
+
+.text{
+    color: white;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 20px;
+}
+
+.decoration-none{
+    text-decoration: none;
+}
+
+.lot-image{
+    background: url("{{ url_for('static', filename='images/lot-image.jpg') }}");
+}
