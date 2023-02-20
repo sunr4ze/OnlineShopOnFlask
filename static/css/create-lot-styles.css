@@ -1,0 +1,58 @@
+.main-block{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 700px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.title-field{
+    display: flex;
+    width: 50%;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid black;
+}
+
+.largeText{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 30px;
+}
+
+.defaultText{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 20px;
+}
+
+.center{
+    justify-content: center;
+}
+
+.field{
+    display: flex;
+    margin-top: 30px;
+}
+
+.button {
+    width: 120px;
+    height: 40px;
+    border-color: #3498db;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.input-field{
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+
+}

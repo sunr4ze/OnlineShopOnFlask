@@ -53,6 +53,6 @@ header{
     text-decoration: none;
 }
 
-.lot-image{
-    background: url("{{ url_for('static', filename='images/lot-image.jpg') }}");
+.container{
+    background: url({{ url_for('static', filename='images/index-background.jpg') }});
 }
