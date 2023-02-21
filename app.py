@@ -1,8 +1,10 @@
 from flask import Flask, render_template
+from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
@@ -13,6 +15,7 @@ class Item(db.Model):
     text = db.Column(db.Text, nullable=False)
     price = db.Column(db.Integer, nullable=False)
     isActive = db.Column(db.Integer, nullable=False)
+    date = db.Column(db.DateTime, default=datetime.utcnow())
 
 
 @app.route('/')

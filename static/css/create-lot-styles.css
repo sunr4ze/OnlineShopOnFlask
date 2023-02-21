@@ -13,17 +13,24 @@
     height: 70px;
     margin-left: auto;
     margin-right: auto;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
 }
 
 .largeText{
     font-family: Comic Sans MS, Comic Sans, cursive;
     font-size: 30px;
+    vertical-align: middle;
 }
 
 .defaultText{
     font-family: Comic Sans MS, Comic Sans, cursive;
     font-size: 20px;
+}
+
+.log0text{
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 30px;
+    color: aqua;
 }
 
 .center{
@@ -33,9 +40,11 @@
 .field{
     display: flex;
     margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.button {
+.button1 {
     width: 120px;
     height: 40px;
     border-color: #3498db;
@@ -46,7 +55,7 @@
     transition: all 150ms ease-in-out;
 }
 
-.button:hover {
+.button1:hover {
     box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
 
@@ -54,5 +63,4 @@
     padding:10px;
     border-radius:10px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-
 }
