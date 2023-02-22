@@ -1,5 +1,4 @@
-from flask import Flask, render_template
-from datetime import datetime
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -12,15 +11,17 @@ db = SQLAlchemy(app)
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    text = db.Column(db.Text, nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    isActive = db.Column(db.Integer, nullable=False)
-    date = db.Column(db.DateTime, default=datetime.utcnow())
+    text = db.Column(db.Text, nullable=False)
+    isActive = db.Column(db.Boolean, default=True)
 
+    def __repr__(self):
+        return self.title
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    items = Item.query.order_by(Item.price).all()
+    return render_template('index.html', data=items)
 
 
 @app.route('/about')
@@ -28,9 +29,21 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/create-lot')
+@app.route('/create-lot', methods=['POST', 'GET'])
 def create():
-    return render_template('create-lot.html')
+    if request.method=='POST':
+        title = request.form['title']
+        price = request.form['price']
+        text = request.form['text']
+
+        item = Item(title=title, price=price, text=text)
+
+        db.session.add(item)
+        db.session.commit()
+        return redirect('/')
+
+    else:
+        return render_template('create-lot.html')
 
 
 

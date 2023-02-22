@@ -6,6 +6,10 @@ body{
     background-color: #87CEFA;
 }
 
+.margin-top{
+    margin-top: 30px;
+}
+
 header{
     display: flex;
     width: 100%;
@@ -49,6 +53,14 @@ header{
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.block2{
+    display: flex;
+    width: 80%
+    margin: 10 auto 10 auto;
+    height: 150px;
+    flex-direction: column;
 }
 
 .header-elems{

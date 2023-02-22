@@ -5,26 +5,30 @@
 {% endblock %}
 {% block body %}
 <div class="container">
- <div class="lots">
+<main>
+    <div class="card-beck mb-3 text-center">
+    {% for el in data %}
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-     <div class="col">
-      <div class="card mb-4 rounded-3 shadow-sm">
-       <div class="card-header py-3">
-        <h4 class="my-0 fw-normal">Товар</h4>
-       </div>
-       <div class="card-body lot-image">
-        <h1 class="card-title pricing-card-title">Цена<small class="text-muted fw-light"></small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-         <li>Описание</li>
-         <li>Описание</li>
-         <li>Описание</li>
-         <li>Описание</li>
-        </ul> <button type="button" class="btn btn-warning">Приобрести</button>
-       </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary margin-top">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-muted fw-light"></small></h1>
+                <div class="block2 center">
+                    <p class="defaultText">
+                        {{ el.text }}
+                    </p>
+                </div>
+            <button type="button" class="w-100 btn btn-lg btn-primary">Купить</button>
+          </div>
+        </div>
       </div>
-     </div>
     </div>
-  </div>
+   </div>
+    {% endfor %}
+  </main>
     <hr>
  <div id="feedback" class="center">
   <div class="block1 center">
