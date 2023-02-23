@@ -15,8 +15,6 @@ class Item(db.Model):
     text = db.Column(db.Text, nullable=False)
     isActive = db.Column(db.Boolean, default=True)
 
-    def __repr__(self):
-        return self.title
 
 @app.route('/')
 def index():
@@ -36,20 +34,27 @@ def create():
         price = request.form['price']
         text = request.form['text']
 
-        item = Item(title=title, price=price, text=text)
+        data = Item(title=title, price=price, text=text)
 
-        db.session.add(item)
-        db.session.commit()
-        return redirect('/')
+        try:
+            db.session.add(data)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return "Произошла ошибка"
 
     else:
         return render_template('create-lot.html')
+
+
+@app.route('/lot/<int:id>')
+def lot(id):
+    data = Item.query.get_or_404(id)
+    return render_template('lot.html', data=data)
 
 
 
 
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        app.run(debug=True)
+    app.run(debug=True)

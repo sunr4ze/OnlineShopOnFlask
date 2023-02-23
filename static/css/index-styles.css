@@ -44,6 +44,10 @@ header{
     font-size: 10px;
 }
 
+.ultralargeText{
+    font-size: 45px;
+}
+
 .center{
     justify-content: center;
 }
@@ -61,6 +65,8 @@ header{
     margin: 10 auto 10 auto;
     height: 150px;
     flex-direction: column;
+    border-radius: 7px;
+    border: 1px solid grey;
 }
 
 .header-elems{
@@ -116,6 +122,7 @@ header{
     display: flex;
     width: 60%;
     flex-direction: column;
+    border-right: 1px solid grey;
 }
 
 .right{
@@ -167,4 +174,94 @@ header{
 .button2:hover{
     background-position: right center;
 }
+
+.button3{
+    text-decoration: none;
+    display: inline-block;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+.footer1{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 80%;
+    border-top: 2px solid white;
+    margin-top: 220px;
+    margin-left: 130px;
+}
+
+.logo2{
+    height: 100%;
+    width: 50%;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.links{
+    height: 100%;
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.jpg{
+    margin-top: 60px;
+}
+
+.col-4{
+    display: flex;
+    width: 100%;
+}
+
+.button3:hover{
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+.block4{
+    display: flex;
+    width: 90%;
+    margin: 30px auto 30px auto;
+    justify-content: center;
+}
+
+
+.button4{
+    background-color: white;
+    border: 2px solid #4CAF50;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button4:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+
+
 

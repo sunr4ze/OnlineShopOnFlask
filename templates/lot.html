@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ data.title }}
+{% endblock %}
+
+{% block body %}
+    <div class="block4">
+        <div class="left">
+            <div class="block1 center">
+                <p class="largeText">
+                    {{ data.title }}
+                </p>
+            </div>
+            <div class="block1 center">
+                <p class="largeText">
+                    {{ data.text }}
+                </p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="block1 center">
+                <p class="ultralargeText">
+                    {{ data.price }}<small
+                        class="text-muted fw-light">рублей</small>
+                </p>
+            </div>
+            <div class="block1 center">
+                <a href="#"><input type="submit" class="button4" value="Купить"></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

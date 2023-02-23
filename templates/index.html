@@ -8,27 +8,27 @@
 <main>
     <div class="card-beck mb-3 text-center">
     {% for el in data %}
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary margin-top">
-          <div class="card-header py-3 text-bg-primary border-primary">
-            <h4 class="my-0 fw-normal">{{ el.title }}</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-muted fw-light"></small></h1>
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">
+                    {{ el.title}}
+                </h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title"> {{ el.price }} <small
+                        class="text-muted fw-light">рублей</small></h1>
+                <hr>
                 <div class="block2 center">
                     <p class="defaultText">
                         {{ el.text }}
                     </p>
-                </div>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Купить</button>
-          </div>
+                </div> <br>
+                <a href="/lot/{{ el.id }}"><input type="submit" class="button3" value="Купить"></a>
+            </div>
         </div>
-      </div>
-    </div>
-   </div>
     {% endfor %}
-  </main>
+    </div>
+</main>
     <hr>
  <div id="feedback" class="center">
   <div class="block1 center">
