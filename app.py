@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect
+from cloudipsp import Api, Checkout
+from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -12,8 +14,9 @@ class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    text = db.Column(db.Text, nullable=False)
+    text = db.Column(db.Text)
     isActive = db.Column(db.Boolean, default=True)
+
 
 
 @app.route('/')
@@ -32,9 +35,8 @@ def create():
     if request.method=='POST':
         title = request.form['title']
         price = request.form['price']
-        text = request.form['text']
 
-        data = Item(title=title, price=price, text=text)
+        data = Item(title=title, price=price)
 
         try:
             db.session.add(data)
@@ -46,12 +48,18 @@ def create():
     else:
         return render_template('create-lot.html')
 
-
-@app.route('/lot/<int:id>')
-def lot(id):
-    data = Item.query.get_or_404(id)
-    return render_template('lot.html', data=data)
-
+@app.route('/buy/<int:id>')
+def lot_buy(id):
+    item = Item.query.get(id)
+    api = Api(merchant_id=1396424,
+              secret_key='test')
+    checkout = Checkout(api=api)
+    data = {
+        "currency": "RUB",
+        "amount": str(item.price) + '00'
+    }
+    url = checkout.url(data).get('checkout_url')
+    return redirect(url)
 
 
 

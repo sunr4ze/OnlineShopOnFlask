@@ -5,74 +5,25 @@
 {% endblock %}
 {% block body %}
 <div class="container">
-<main>
-    <div class="card-beck mb-3 text-center">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
     {% for el in data %}
         <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">
-                    {{ el.title}}
-                </h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title"> {{ el.price }} <small
-                        class="text-muted fw-light">рублей</small></h1>
-                <hr>
-                <div class="block2 center">
-                    <p class="defaultText">
-                        {{ el.text }}
-                    </p>
-                </div> <br>
-                <a href="/lot/{{ el.id }}"><input type="submit" class="button3" value="Купить"></a>
-            </div>
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{ el.price }}<small class="text-muted fw-light">₽</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>10 users included</li>
+              <li>2 GB of storage</li>
+              <li>Email support</li>
+              <li>Help center access</li>
+            </ul>
+            <a href="/buy/{{ el.id }}"><button type="button" class="w-100 btn btn-lg btn-outline-primary">Купить</button></a>
+          </div>
         </div>
     {% endfor %}
     </div>
-</main>
     <hr>
- <div id="feedback" class="center">
-  <div class="block1 center">
-      <p class="largeText">
-        Отзывы
-      </p>
-  </div>
-  <div class="mainfeed">
-     <div class="left">
-         <div class="feed center">
-              <p class="defaultText">
-                  Отзыв
-              </p>
-         </div>
-         <div class="feed center">
-              <p class="defaultText">
-                  Отзыв
-              </p>
-         </div>
-         <div class="feed center">
-              <p class="defaultText">
-                  Отзыв
-              </p>
-         </div>
-         <div class="feed center">
-              <p class="defaultText">
-                  Отзыв
-              </p>
-         </div>
-     </div>
-     <div class="right">
-         <div class="block1 center">
-             <p class="defaultText">
-                 Оставьте свой отзыв
-             </p>
-         </div>
-         <div class="block1 center">
-             <textarea rows="9" cols="52" name="Описание" placeholder="Описание" class="input-field"></textarea>
-         </div>
-         <div class="block1 center">
-             <input type="submit" class="button2 smallText" value="Отправить"/>
-         </div>
-     </div>
-  </div>
- </div>
- </div>
+</div>
 {% endblock %}
